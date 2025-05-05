@@ -1,0 +1,15 @@
+# Exported from Render on 2025-05-05T22:35:13Z
+services:
+- type: web
+  name: reverse-image-api
+  runtime: node
+  repo: https://github.com/bconnectbd/reverse-image-api
+  plan: free
+  envVars:
+  - key: reverse-image-check-api
+    sync: false
+  region: oregon
+  buildCommand: npm i
+  startCommand: node server.js
+  autoDeployTrigger: commit
+version: "1"
